@@ -26,19 +26,6 @@ exit the iteration of diff result, the computation stopped at the same time.
 - Delete
 - Insert
 
-> "Identical" just means "equal" when update detection was not enabled, but
-> different when update detection was enabled.
->
-> When update detection was enabled, "equal" means an element is equatable to
-> another but there may be slightly differences between them such as different
-> memory addresses. "Identical" means an element is totally identical to another
-> and there are no difference between them.
->
-> Enabling `Update` detection causes the time complexity comes to degenerate to
-> **O(N*M)**. When each element is equal to another and was updated at the same
-> time, the time complexity of diffing them went to **O(N^2)** in the worst
-> case.
-
 ## Usage
 
 Diffing without update detection.
@@ -190,6 +177,23 @@ for eachDiff in old.diff( to: new, isEqual: ===) {
 ```
 
 ## Notes
+
+### About Update Detection
+
+"Identical" just means "equal" when update detection was not enabled, but
+different when update detection was enabled.
+
+When update detection was enabled, "equal" means an element is equatable to
+another but there may be slightly differences between them such as different
+memory addresses. "Identical" means an element is totally identical to another
+and there are no difference between them.
+
+Enabling `Update` detection causes the time complexity comes to degenerate to
+**O(N*M)**. When each element is equal to another and was updated at the same
+time, the time complexity of diffing them went to **O(N^2)** in the worst
+case.
+
+### Why Chose to Diff Collection but Not Sequence
 
 Since `Collection` in Swift offers `Index` accessing which `Sequence` does not
 and you have to "name" a difference with an index, this library only supports

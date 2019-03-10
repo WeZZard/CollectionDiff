@@ -9,7 +9,10 @@ A diff tool for Swift collections.
 
 This library implements an algorithm of time complexity of **O(N+M)** and
 spatial complexity of **O(N+M)** which takes advantages of counting
-computational model to diff Swift collections.
+computational model to diff Swift collections (needs elements implements
+`Hashable` protocol). If the elements do not conforms to `Hashable` protocol,
+the computational model was switched to comparison model and the time complexity
+degenerates to **O(N*M)**.
 
 This library offers both **dot syntax** and **standalone function** to access
 diffing infrastructure.

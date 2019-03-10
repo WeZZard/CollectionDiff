@@ -187,10 +187,10 @@ for eachDiff in old.diff( to: new, isEqual: ===) {
 "Identical" just means "equal" when update detection was not enabled, but
 different when update detection was enabled.
 
-When update detection was enabled, "equal" means an element is equatable to
-another but there may be slightly differences between them such as different
-memory addresses. "Identical" means an element is totally identical to another
-and there are no difference between them.
+When update detection was enabled, "equal" comes to mean an element is equatable
+to another but there may be slightly differences between them such as different
+memory addresses. "Identical" comes to mean an element is totally identical to another
+and there are no differences between them.
 
 Enabling `Update` detection causes the time complexity comes to degenerate to
 **O(N*M)**. When each element is equal to another and was updated at the same

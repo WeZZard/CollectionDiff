@@ -14,12 +14,9 @@ computational model to diff Swift collections.
 This library offers both **dot syntax** and **standalone function** to access to
 diffing infrastructure.
 
-> Since `Collection` in Swift offers `Index` accessing which `Sequence` does
-> not and you have to "name" a difference with an index, this library only
-> supports Swift types of `Collection`.
->
-> If you wanna diff instances of type of `Sequence`, convert them into types of
-> `Collection`, or say `Array`, firstly.
+This library supports lazy evaluation and on-demand computation. The computation
+would not happen unless you get started to iterate the diff results. Once you
+exit the iteration of diff result, the computation stopped at the same time.
 
 ## Detectable Differences
 
@@ -38,8 +35,9 @@ diffing infrastructure.
 > and there are no difference between them.
 >
 > Enabling `Update` detection causes the time complexity comes to degenerate to
-> **O(N^2)**. The time complexity went to **O(N^2)** in the worst case when each
-> element is equal to another and was updated.
+> **O(N*M)**. When each element is equal to another and was updated at the same
+> time, the time complexity of diffing them went to **O(N^2)** in the worst
+> case.
 
 ## Usage
 
@@ -190,6 +188,15 @@ for eachDiff in old.diff( to: new, isEqual: ===) {
 	// ...
 }
 ```
+
+## Notes
+
+Since `Collection` in Swift offers `Index` accessing which `Sequence` does not
+and you have to "name" a difference with an index, this library only supports
+Swift types of `Collection`.
+
+If you wanna diff instances of type of `Sequence`, convert them into types of
+`Collection`, or say `Array`, firstly.
 
 ## License
 

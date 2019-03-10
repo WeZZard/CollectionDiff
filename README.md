@@ -11,12 +11,13 @@ This library implements an algorithm of time complexity of **O(N+M)** and
 spatial complexity of **O(N+M)** which takes advantages of counting
 computational model to diff Swift collections.
 
-This library offers both **dot syntax** and **standalone function** to access to
+This library offers both **dot syntax** and **standalone function** to access
 diffing infrastructure.
 
-This library supports lazy evaluation and on-demand computation. The computation
-would not happen unless you get started to iterate the diff results. Once you
-exit the iteration of diff result, the computation stopped at the same time.
+This library supports **lazy evaluation** and **on-demand** computation. The
+computation would not happen unless you get started to iterate the diff results.
+Once you exit the iteration of diff result, the computation stopped at the same
+time.
 
 ## Detectable Differences
 

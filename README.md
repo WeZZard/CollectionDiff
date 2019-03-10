@@ -21,7 +21,7 @@ diffing infrastructure.
 > If you wanna diff instances of type of `Sequence`, convert them into types of
 > `Collection`, or say `Array`, firstly.
 
-## Detectable Difference
+## Detectable Differences
 
 - Identical
 - Update (Needs to pass an additional closure to handle)
